@@ -1,6 +1,5 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import React from 'react';
+import {Routes,  Route } from 'react-router-dom'
 import './App.css'
 
 function App() {
@@ -8,6 +7,14 @@ function App() {
 
   return (
     <>
+    <header>
+      <h1>Petals & Pots</h1>
+    </header>
+    <main>
+      <Routes>
+        
+      </Routes>
+    </main>
     </>
   )
 }
