@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 function Plants() {
-    const [plants, setPlants] = useState(null);
+    const [plants, setPlants] = useState();
 
     useEffect(() => {
         async function fetchPlants() {
@@ -28,7 +28,11 @@ function Plants() {
                         <Link to={`/details/${plant._id}`} key={plant.id}>
                             <div className="card">
                                 <div className="plant-image">
-                                    <img src={plant.default_image.regular_url} alt={plant.common_name} />
+                                    {plant.default_image && plant.default_image.regular_url ? (
+                                        <img src={plant.default_image.regular_url} alt={plant.common_name} />
+                                    ) : (
+                                        <p>No Image Available</p>
+                                    )}
                                 </div>
                                 <h2>{plant.common_name}</h2>
                                 <p>{plant.scientific_name[0]}</p>
