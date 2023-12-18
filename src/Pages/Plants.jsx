@@ -25,7 +25,7 @@ function Plants() {
             <section className="container">
                 {plants &&
                     plants.data.map((plant) => (
-                        <Link to={`/details/${plant._id}`} key={plant.id}>
+                        <Link to={`/details/${plant.id}`} key={plant.id}>
                             <div className="card">
                                 <div className="plant-image">
                                     {plant.default_image && plant.default_image.regular_url ? (
