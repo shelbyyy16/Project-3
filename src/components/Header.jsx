@@ -16,10 +16,10 @@ function Header() {
         <Link to="/">
           <div className="home-nav">Home</div>
         </Link>
-        <Link to="/about">
+        <Link to="/plants">
           <div className="plants-nav">Plant Library</div>
         </Link>
-        <Link to="/favorites">
+        <Link to="/garden">
           <div className="favorites-nav">My Garden</div>
         </Link>
 

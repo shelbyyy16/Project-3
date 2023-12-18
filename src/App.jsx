@@ -2,6 +2,7 @@ import React from 'react';
 import {Routes,  Route } from 'react-router-dom'
 import './App.css'
 import Header from './components/Header';
+import Footer from './components/Footer';
 import Home from './Pages/Home';
 import Plants from './Pages/Plants';
 import PlantDetails from './Pages/PlantDetails';
@@ -20,8 +21,9 @@ function App() {
       <Route exact path="/" element={<Home />} />
       <Route path="/plants" element={<Plants />} />
       <Route path ="/details/:id" element={ <PlantDetails />} />
-      <Route path="/mygarden" element={ <MyGarden />} />
+      <Route path="/garden" element={ <MyGarden />} />
       </Routes>
+      <Footer />
     </main>
     </>
   )
