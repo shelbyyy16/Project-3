@@ -7,6 +7,7 @@ import Home from '../../Pages/Home';
 import Plants from '../../Pages/Plants';
 import PlantDetails from '../../Pages/PlantDetails';
 import MyGarden from '../../Pages/MyGarden';
+import Profile from '../../Pages/Profile';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
       <Route path="/plants" element={<Plants />} />
       <Route path ="/details/:id" element={ <PlantDetails />} />
       <Route path="/garden" element={ <MyGarden />} />
+      <Route path="/profile" element={ <Profile />} />
       </Routes>
       <Footer />
     </main>

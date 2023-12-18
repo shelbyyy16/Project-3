@@ -10,6 +10,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Auth0ProviderWithNavigate>
         <App />
         </Auth0ProviderWithNavigate>
-
     </Router>
 )

@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
 import LoginButton from "./Auth/LoginButton";
+import LogoutButton from "./Auth/LogoutButton";
 
 function Header() {
+  const { user, isAuthenticated, isLoading } = useAuth0();
+
   const navStyle = {
     display: "flex",
     justifyContent: "flex-end",
@@ -16,9 +20,22 @@ function Header() {
           <Link to="/">
             <div className="home-nav">Home</div>
           </Link>
-          <div>
+  <div className="login-logout-button">
+        {/* A nested ternary can conditionally render multiple states */}
+        {!isLoading ? (
+          // if the loading variable is true - the ! will convert it to false and 'null' will be returned
+          // if the loading variable is false - the ! will convert it to true and the next ternary will evaluate
+          // if the user is authenticated (isAuthenticated === true), then a profile link and logout button are visible, otherwise, it will display the login button
+
+          isAuthenticated ? (
+            <span>
+              <Link to="/profile">Profile</Link> || <LogoutButton />
+            </span>
+          ) : (
             <LoginButton />
-          </div>
+          )
+        ) : null}
+      </div>
           <Link to="/plants">
             <div className="plants-nav">Plant Library</div>
           </Link>
