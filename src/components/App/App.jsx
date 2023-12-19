@@ -11,6 +11,7 @@ import MyGarden from '../../Pages/MyGarden';
 import Profile from '../../Pages/Profile';
 import Search from '../../Pages/Search';
 
+
 function App() {
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -25,7 +26,7 @@ function App() {
           <Route path="/details/:id" element={<PlantDetails />} />
           <Route path="/garden" element={<MyGarden />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="/search" element={<Search searchQuery={searchQuery} />} />
+          <Route path="/search" element={<Search />} />
         </Routes>
         <Footer />
       </main>

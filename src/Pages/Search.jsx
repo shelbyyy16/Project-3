@@ -9,40 +9,35 @@ function Search({ searchQuery }) {
       try {
         const apiKey = import.meta.env.VITE_API_KEY;
         const response = await axios.get(
-          `https://perenual.com/api/search?key=${apiKey}&q=${searchQuery}`
+          `https://perenual.com/api/species-list?key=${apiKey}&=${searchQuery}`
         );
-
+  
+        console.log('API Response:', response.data); // Log the response data
+  
         setSearchResults(response.data.data);
       } catch (error) {
         console.error('Error fetching search results', error);
       }
     }
-
-    if (searchQuery.trim() !== '') {
+  
+    // Fetch data when the search query changes
+    if (searchQuery) {
       fetchSearchResults();
     } else {
-      setSearchResults([]); // Clear results if the search query is empty
+      // Reset search results when searchQuery is empty
+      setSearchResults([]);
     }
   }, [searchQuery]);
 
   return (
     <div>
       <h1>Search Results</h1>
-      <p>Search Query: {searchQuery}</p>
-      {searchResults && searchResults.length > 0 ? (
-        <ul>
-          {searchResults.map((result) => (
-            <li key={result.id}>
-              {/* Display relevant information about the plant */}
-              <h3>{result.common_name}</h3>
-              <p>Scientific Name: {result.scientific_name}</p>
-              {/* Add more details as needed */}
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <p>No results found.</p>
-      )}
+      {/* Display search results here */}
+      {searchResults.map((result) => (
+        <div key={result.id}>
+            <h1>{result.common_name}</h1>
+            </div>
+      ))}
     </div>
   );
 }
