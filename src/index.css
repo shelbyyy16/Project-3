@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background-color: #f4f4f4; /* Light gray background */
+    background-color: #f4f4f4; 
     color: #333;
     font-family: Arial, sans-serif;
 }
@@ -16,14 +16,21 @@ body {
     width: 100%;
     padding: 10px; 
   }
+  .nav {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.5rem;
+    width: 100%;
+    margin: auto;
+  }
 
   /* PLANT LIBRARY CSS */
 
   .container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Display three cards in a row */
+    grid-template-columns: repeat(3, 1fr); 
     grid-auto-rows: minmax(250px, auto);
-    grid-gap: 1rem; /* Adjusted the grid gap for closer vertical spacing */
+    grid-gap: 1rem; 
     margin: 0 auto;
     max-width: 1200px;
     padding: 1rem;

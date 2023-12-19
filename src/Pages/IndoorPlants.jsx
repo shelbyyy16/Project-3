@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-function Plants() {
+function IndoorPlants() {
     const [plants, setPlants] = useState();
 
     useEffect(() => {
@@ -21,26 +21,24 @@ function Plants() {
 
     return (
         <>
-            <h1>Plant Library</h1>
+            <h1>Indoor Plant Library</h1>
             <section className="container">
                 {plants &&
-                    plants.data.map((plant) => (
-                        <Link to={`/details/${plant.id}`} key={plant.id} className="plant-link">
-                            <div className="card">
-                                <div className="plant-image">
-                                    {plant.default_image && plant.default_image.regular_url ? (
+                    plants.data
+                        .filter((plant) => plant.default_image && plant.default_image.regular_url)
+                        .map((plant) => (
+                            <Link to={`/details/${plant.id}`} key={plant.id} className="plant-link">
+                                <div className="card">
+                                    <div className="plant-image">
                                         <img src={plant.default_image.regular_url} alt={plant.common_name} />
-                                    ) : (
-                                        <p>No Image Available</p>
-                                    )}
+                                    </div>
+                                    <h2>{plant.common_name}</h2>
                                 </div>
-                                <h2>{plant.common_name}</h2>
-                            </div>
-                        </Link>
-                    ))}
+                            </Link>
+                        ))}
             </section>
         </>
     );
 }
 
-export default Plants;
+export default IndoorPlants;
