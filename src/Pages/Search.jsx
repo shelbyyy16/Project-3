@@ -12,7 +12,7 @@ function Search({ searchQuery }) {
           `https://perenual.com/api/species-list?key=${apiKey}&=${searchQuery}`
         );
   
-        console.log('API Response:', response.data); // Log the response data
+        console.log('API Response:', response.data); 
   
         setSearchResults(response.data.data);
       } catch (error) {
@@ -20,11 +20,11 @@ function Search({ searchQuery }) {
       }
     }
   
-    // Fetch data when the search query changes
+
     if (searchQuery) {
       fetchSearchResults();
     } else {
-      // Reset search results when searchQuery is empty
+
       setSearchResults([]);
     }
   }, [searchQuery]);
