@@ -9,6 +9,13 @@ body {
   background-size: cover;
 }
 
+a:-webkit-any-link {
+  color: -webkit-link;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+
 html {
   scroll-behavior: smooth;
 }
@@ -29,11 +36,7 @@ html {
   width: 100%;
   margin: auto;
   background-color: #849b6d;
-}
-
-.home-icon {
-  height: 10%;
-  width: 10%;
+  text-decoration: none;
 }
 
 .home-nav,
@@ -41,8 +44,20 @@ html {
   margin-right: auto; 
 }
 
+.login-logout-button:hover {
+  cursor: pointer;
+}
+
+.home-nav {
+  text-decoration: none; 
+  color: inherit; 
+  cursor: pointer; 
+  color: #ffffff; 
+}
+
 .search-nav {
   margin-left: auto; 
+  margin-right: 20px;
 }
 
 input[type="text"] {
@@ -51,6 +66,19 @@ input[type="text"] {
   border: 1px solid #556b2f;
   border-radius: 4px;
 }
+
+/* HOME PAGE */
+ .browse-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #849b6d;
+ }
+
+ .browse-button {
+  padding: 20px;
+  margin: 20px;
+ }
 
   /* PLANT LIBRARY's */
   .container {

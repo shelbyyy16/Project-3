@@ -16,11 +16,7 @@ function Header({ setSearchQuery }) {
         <div>
             <nav className="nav">
                 <Link to="/">
-                    <img
-                        src="./images/plantIcon.png" 
-                        alt="Home"
-                        className="home-icon"
-                    />
+                <div className="home-nav">Petals & Pots</div>
                 </Link>
                 <div className="login-logout-button">
                     {!isLoading ? (
@@ -35,7 +31,7 @@ function Header({ setSearchQuery }) {
                 </div>
                 <input
                     type="text"
-                    placeholder="Search for plants..."
+                    placeholder="Type a plant name..."
                     onChange={handleSearch}
                 />
                 <Link to="/search">

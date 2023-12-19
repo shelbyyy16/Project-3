@@ -12,7 +12,17 @@ function Search({ searchQuery }) {
         const response = await axios.get(
           `https://perenual.com/api/species-list?key=${apiKey}&q=${searchQuery}`
         );
-        setSearchResults(response.data.data);
+
+        const filteredResults = response.data.data.filter(
+          (result) => 
+            result.common_name.toLowerCase().includes(searchQuery.toLowerCase()) &&
+            result.default_image && result.default_image.regular_url
+        );
+
+        const uniqueResults = Array.from(new Set(filteredResults.map((result) => result.common_name)))
+          .map((commonName) => filteredResults.find((result) => result.common_name === commonName));
+
+        setSearchResults(uniqueResults);
       } catch (error) {
         console.error("Error fetching search results", error);
       }
