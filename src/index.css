@@ -3,6 +3,9 @@ body {
     background-color: #f4f4f4; 
     color: #333;
     font-family: Arial, sans-serif;
+    background-image: url(/images/1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
   html {
@@ -22,15 +25,15 @@ body {
     padding: 0.5rem;
     width: 100%;
     margin: auto;
+    background-color: #556b2f;
   }
 
   /* PLANT LIBRARY CSS */
-
   .container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); 
+    grid-template-columns: repeat(2, 1fr); /* Updated to 2 columns */
     grid-auto-rows: minmax(250px, auto);
-    grid-gap: 1rem; 
+    grid-gap: 1rem;
     margin: 0 auto;
     max-width: 1200px;
     padding: 1rem;
@@ -60,22 +63,33 @@ body {
 
     .plant-image {
         img {
-            max-width: 100%;
+            max-width: 100%; /* Take up the whole left side */
             height: 100%;
             border-radius: 4px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
     }
 
-    h2 {
-        margin-left: 10px;
-        font-size: 1rem;
-        text-align: left;
+    .content-container {
+        padding: 10px;
     }
 
-    p {
-        margin: 10px 0;
+    h3 {
+        margin-left: 10px;
+        text-align: left;
     }
+    .plant-title{
+        font-size: 2rem;
+    }
+
+    ul {
+        margin-left: 0;
+        font-size: 1rem;
+        text-align: left;
+        list-style: none;
+        padding: 0;
+    }
+
 }
 
 h1 {

@@ -29,10 +29,18 @@ function OutdoorPlants() {
                         .map((plant) => (
                             <Link to={`/details/${plant.id}`} key={plant.id} className="plant-link">
                                 <div className="card">
-                                    <div className="plant-image">
-                                        <img src={plant.default_image.regular_url} alt={plant.common_name} />
-                                    </div>
-                                    <h2>{plant.common_name}</h2>
+                                    
+                                        <div className="plant-image">
+                                            <img src={plant.default_image.regular_url} alt={plant.common_name} />
+                                        </div>
+                                        <div className="content-container">
+                                            <h3><span className="plant-title">{plant.common_name}</span>
+                                            <ul>
+                                                Cycle: {plant.cycle}
+                                                Watering: {plant.watering}
+                                                Sunlight: {plant.sunlight}
+                                            </ul></h3>
+                                        </div>
                                 </div>
                             </Link>
                         ))}

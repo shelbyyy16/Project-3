@@ -28,6 +28,9 @@ function Header() {
           <Link to="/indoorplants">
             <div className="plants-nav">Indoor Plant Library</div>
           </Link>
+          <Link to="/outdoorplants">
+            <div className="plants-nav">Outdoor Plant Library</div>
+          </Link>
           <Link to="/garden">
             <div className="favorites-nav">My Garden</div>
           </Link>
