@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 function IndoorPlants() {
-  const [plants, setPlants] = useState();
+  const [plants, setPlants] = useState([]);
 
   useEffect(() => {
     async function fetchPlants() {
@@ -12,7 +12,7 @@ function IndoorPlants() {
         const response = await axios.get(
           `https://perenual.com/api/species-list?key=${apiKey}&indoor=1&order=asc`
         );
-        setPlants(response.data);
+        setPlants(response.data.data);
       } catch (error) {
         console.error("Error fetching plant", error);
       }
@@ -21,12 +21,16 @@ function IndoorPlants() {
     fetchPlants();
   }, []);
 
+
+  const uniquePlants = Array.from(new Set(plants.map(plant => plant.common_name)))
+    .map(commonName => plants.find(plant => plant.common_name === commonName));
+
   return (
     <>
       <h1>Indoor Plant Library</h1>
       <section className="container">
-        {plants &&
-          plants.data
+        {uniquePlants &&
+          uniquePlants
             .filter(
               (plant) => plant.default_image && plant.default_image.regular_url
             )
