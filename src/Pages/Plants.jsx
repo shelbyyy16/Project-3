@@ -9,7 +9,7 @@ function Plants() {
         async function fetchPlants() {
             try {
                 const apiKey = import.meta.env.VITE_API_KEY;
-                const response = await axios.get(`https://perenual.com/api/species-list?key=${apiKey}`);
+                const response = await axios.get(`https://perenual.com/api/species-list?key=${apiKey}&indoor=1&order=asc`);
                 setPlants(response.data);
             } catch (error) {
                 console.error("Error fetching plant", error);
@@ -25,7 +25,7 @@ function Plants() {
             <section className="container">
                 {plants &&
                     plants.data.map((plant) => (
-                        <Link to={`/details/${plant.id}`} key={plant.id}>
+                        <Link to={`/details/${plant.id}`} key={plant.id} className="plant-link">
                             <div className="card">
                                 <div className="plant-image">
                                     {plant.default_image && plant.default_image.regular_url ? (
@@ -35,7 +35,6 @@ function Plants() {
                                     )}
                                 </div>
                                 <h2>{plant.common_name}</h2>
-                                <p>{plant.scientific_name[0]}</p>
                             </div>
                         </Link>
                     ))}

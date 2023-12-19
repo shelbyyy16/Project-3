@@ -1,0 +1,78 @@
+body {
+    margin: 0;
+    background-color: #f4f4f4; /* Light gray background */
+    color: #333;
+    font-family: Arial, sans-serif;
+}
+
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  .footer {
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px; 
+  }
+
+  /* PLANT LIBRARY CSS */
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Display three cards in a row */
+    grid-auto-rows: minmax(250px, auto);
+    grid-gap: 1rem; /* Adjusted the grid gap for closer vertical spacing */
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 1rem;
+}
+
+.plant-link {
+    width: 100%;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: #556b2f;
+    color: #fff;
+    margin: 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: #fffbe6;
+        color: #333;
+    }
+
+    .plant-image {
+        img {
+            max-width: 100%;
+            height: 100%;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    h2 {
+        margin-left: 10px;
+        font-size: 1rem;
+        text-align: left;
+    }
+
+    p {
+        margin: 10px 0;
+    }
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    color: #556b2f;
+}
