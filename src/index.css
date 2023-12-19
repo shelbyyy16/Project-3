@@ -4,6 +4,9 @@ body {
   color: #333;
   font-family: Arial, sans-serif;
   color: #27360e;
+  background-image: url(/images/PlantBackground.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 html {
