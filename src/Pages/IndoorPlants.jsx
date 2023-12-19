@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-function IndoorPlants() {
+function IndoorPlants({ searchQuery }) {
   const [plants, setPlants] = useState([]);
 
   useEffect(() => {
@@ -21,16 +21,20 @@ function IndoorPlants() {
     fetchPlants();
   }, []);
 
-
-  const uniquePlants = Array.from(new Set(plants.map(plant => plant.common_name)))
-    .map(commonName => plants.find(plant => plant.common_name === commonName));
+  const filteredPlants = plants
+    .filter((plant) =>
+      plant.common_name.toLowerCase().includes(searchQuery.toLowerCase())
+    )
+    .filter((plant, index, self) =>
+      index === self.findIndex((p) => p.common_name === plant.common_name)
+    );
 
   return (
     <>
       <h1>Indoor Plant Library</h1>
       <section className="container">
-        {uniquePlants &&
-          uniquePlants
+        {filteredPlants &&
+          filteredPlants
             .filter(
               (plant) => plant.default_image && plant.default_image.regular_url
             )
@@ -48,12 +52,12 @@ function IndoorPlants() {
                     />
                   </div>
                   <div className="content-container">
-                  <span className="plant-title">{plant.common_name}</span>
-                  <ul>
-                    Cycle: {plant.cycle}<br></br><br></br>
-                    Watering: {plant.watering}<br></br><br></br>
-                    Sunlight: {plant.sunlight}<br></br><br></br>
-                  </ul>
+                    <span className="plant-title">{plant.common_name}</span>
+                    <ul>
+                      Cycle: {plant.cycle}<br /><br />
+                      Watering: {plant.watering}<br /><br />
+                      Sunlight: {plant.sunlight}<br /><br />
+                    </ul>
                   </div>
                 </div>
               </Link>

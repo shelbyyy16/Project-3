@@ -1,14 +1,19 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import LoginButton from "./Auth/LoginButton";
 import LogoutButton from "./Auth/LogoutButton";
 
-function Header() {
+function Header({ setSearchQuery }) {
   const { user, isAuthenticated, isLoading } = useAuth0();
+
+  const handleSearch = (e) => {
+    setSearchQuery(e.target.value);
+  };
 
   return (
     <header>
-      <div >
+      <div>
         <nav className="nav">
           <Link to="/">
             <div className="home-nav">Petals & Pots</div>
@@ -33,6 +38,14 @@ function Header() {
           </Link>
           <Link to="/garden">
             <div className="favorites-nav">My Garden</div>
+          </Link>
+          <input
+            type="text"
+            placeholder="Search for plants..."
+            onChange={handleSearch}
+          />
+          <Link to="/search">
+            <div className="search-nav">Search</div>
           </Link>
         </nav>
       </div>
