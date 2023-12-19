@@ -32,7 +32,7 @@ function PlantDetails() {
       {plantDetails && (
         <div className="details-container">
           <div className="details-card">
-            <div className="details-image">
+            <div className="plant-image">
               {plantDetails.default_image && (
                 <img
                   src={plantDetails.default_image.regular_url}
@@ -40,25 +40,21 @@ function PlantDetails() {
                 />
               )}
             </div>
-            <h2>{plantDetails.common_name || "Common Name not available"}</h2>
-            <p>
-              Scientific Name:{" "}
-              {plantDetails.scientific_name &&
-                plantDetails.scientific_name[0]}
-            </p>
-            <p>Indoor Plant: {plantDetails.indoor ? "Yes" : "No"}</p>
-            <p>Watering Needs: {plantDetails.watering}</p>
-            <p>
-              Sunlight Needs:{" "}
-              {plantDetails.sunlight && plantDetails.sunlight.join(", ")}
-            </p>
-            <p>
-              Toxic to humans: {plantDetails.poisonous_to_humans ? "Yes" : "No"}
-            </p>
-            <p>
-              Toxic to pets: {plantDetails.poisonous_to_pets ? "Yes" : "No"}
-            </p>
-            <p>Care Level: {plantDetails.care_level}</p>
+            <div className="content-container">
+              <span className="plant-title">
+                {plantDetails.common_name || "Common Name not available"}
+              </span> 
+              
+              <ul>
+                <li>Scientific Name: {plantDetails.scientific_name && plantDetails.scientific_name[0]}</li>
+                <li>Indoor Plant: {plantDetails.indoor ? "Yes" : "No"}</li>
+                <li>Watering Needs: {plantDetails.watering}</li>
+                <li>Sunlight Needs: {plantDetails.sunlight && plantDetails.sunlight.join(", ")}</li>
+                <li>Toxic to humans: {plantDetails.poisonous_to_humans ? "Yes" : "No"}</li>
+                <li>Toxic to pets: {plantDetails.poisonous_to_pets ? "Yes" : "No"}</li>
+                <li>Care Level: {plantDetails.care_level}</li>
+              </ul>
+            </div>
           </div>
         </div>
       )}

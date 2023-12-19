@@ -3,9 +3,7 @@ body {
     background-color: #f4f4f4; 
     color: #333;
     font-family: Arial, sans-serif;
-    background-image: url(/images/1.png);
-    background-repeat: no-repeat;
-    background-size: cover;
+    color: #556b2f;
 }
 
   html {
@@ -25,13 +23,13 @@ body {
     padding: 0.5rem;
     width: 100%;
     margin: auto;
-    background-color: #556b2f;
+    background-color: #849b6d;
   }
 
-  /* PLANT LIBRARY CSS */
+  /* PLANT LIBRARY's */
   .container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Updated to 2 columns */
+    grid-template-columns: repeat(2, 1fr); 
     grid-auto-rows: minmax(250px, auto);
     grid-gap: 1rem;
     margin: 0 auto;
@@ -49,8 +47,7 @@ body {
 .card {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    background-color: #556b2f;
-    color: #fff;
+    background-color: #849b6d;
     margin: 0;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -63,25 +60,26 @@ body {
 
     .plant-image {
         img {
-            max-width: 100%; /* Take up the whole left side */
+            max-width: 100%; 
             height: 100%;
             border-radius: 4px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
     }
-
     .content-container {
-        padding: 10px;
+        padding: 20px;
         margin-left: 10px;
         text-align: left;
+        color:#27360e;
     }
     .plant-title{
-        font-size: 2rem;
+        font-size: 1.5rem;
+        font-weight: 600;
     }
 
     ul {
         margin-left: 0;
-        font-size: 1rem;
+        font-size: .80rem;
         text-align: left;
         list-style: none;
         padding: 0;
@@ -94,3 +92,64 @@ h1 {
     margin: 20px 0;
     color: #556b2f;
 }
+
+/* DETAILS PAGE */
+.details-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .details-card {
+    display: flex;
+    flex-direction: row;
+    background-color: #849b6d;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .plant-image {
+    width: 50%;
+    padding: 20px;
+    
+  }
+  
+  .plant-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .content-container {
+    width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+    color:#27360e;
+  }
+  
+  .plant-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  ul li {
+    margin-bottom: 10px;
+  }
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    color: #556b2f;
+}
+
+/* 
+sage green: #849b6d
+
+*/
