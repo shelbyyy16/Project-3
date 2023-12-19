@@ -68,17 +68,32 @@ input[type="text"] {
 }
 
 /* HOME PAGE */
- .browse-button-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #849b6d;
- }
 
- .browse-button {
-  padding: 20px;
+.home-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #849b6d;
+  margin: 10%;
+}
+
+.home-page-image img{
+  width: 50%;
+  height: auto; 
   margin: 20px;
- }
+}
+
+.browse-button-container {
+  background-color: #849b6d;
+  width: 100%;
+  text-align: center;
+}
+
+.browse-button {
+  padding: 20px;
+  margin: 10px;
+}
 
   /* PLANT LIBRARY's */
   .container {
