@@ -32,7 +32,7 @@ function PlantDetails() {
       {plantDetails && (
         <div className="details-container">
           <div className="details-card">
-            <div className="plant-image">
+            <div className="details-plant-image">
               {plantDetails.default_image && (
                 <img
                   src={plantDetails.default_image.regular_url}
@@ -40,7 +40,7 @@ function PlantDetails() {
                 />
               )}
             </div>
-            <div className="content-container">
+            <div className="details-content-container">
               <span className="plant-title">
                 {plantDetails.common_name || "Common Name not available"}
               </span> 

@@ -108,35 +108,35 @@ h1 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
-  .plant-image {
+  .details-plant-image {
     width: 50%;
     padding: 20px;
     
   }
   
-  .plant-image img {
+  .details-plant-image img {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
   }
   
-  .content-container {
+  .details-content-container {
     width: 50%;
     padding: 20px;
     box-sizing: border-box;
-    color:#27360e;
+    color: #27360e;
   }
   
   .plant-title {
     font-size: 1.5em;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 20px; 
   }
   
   ul {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin-top: 20px;
   }
   
   ul li {
