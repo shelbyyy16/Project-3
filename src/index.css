@@ -172,6 +172,56 @@ h1 {
     color: #27360e;
 }
 
+/* PROFILE PAGE */
+
+.profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.profile-card {
+  display: flex;
+  background-color: #849b6d;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-image {
+  width: 50%;
+  padding: 20px;
+}
+
+.profile-details {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.profile-details h2,
+.profile-details p {
+  margin: 0;
+
+}
+
+.profile-details h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+
+}
+
+.profile-details p {
+  font-size: 1.2em;
+  color: #fff;
+  padding: 20px;
+
+}
+
+
 /* 
 sage green: #849b6d
 dark green: #27360e
