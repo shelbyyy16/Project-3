@@ -17,7 +17,7 @@ function App() {
 
   return (
     <>
-      <Header setSearchQuery={setSearchQuery} />
+      <Header setSearchQuery={setSearchQuery}/>
       <main>
         <Routes>
           <Route exact path="/" element={<Home />} />
@@ -26,7 +26,7 @@ function App() {
           <Route path="/details/:id" element={<PlantDetails />} />
           <Route path="/garden" element={<MyGarden />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="/search" element={<Search />} />
+          <Route path="/search" element={<Search searchQuery={searchQuery} />} />
         </Routes>
         <Footer />
       </main>
