@@ -69,10 +69,10 @@ input[type="text"] {
 
 /* HOME PAGE */
  .browse-button-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #849b6d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #849b6d;
  }
 
  .browse-button {
