@@ -3,11 +3,13 @@ import { Link } from "react-router-dom";
 
 function Home() {
   return (
+
     <div className="home-page-container">
       <div className="home-page-image">
         <img src="/images/LandingPage.png" alt="Home Image" />
       </div>
       <div className="browse-button-container">
+        <h2>Gardening: where every day is Earth Day.</h2>
       <Link to="/indoorplants">
         <button className="browse-button">Browse Indoor Plants</button>
       </Link>
@@ -16,6 +18,7 @@ function Home() {
       </Link>
       </div>
     </div>
+
   );
 }
 

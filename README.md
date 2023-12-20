@@ -11,9 +11,9 @@ Note: If your user needs take any specific steps to navigate, interact, or activ
 - Javascript
 - 
 
-Getting Started: That includes:
+Getting Started: 
 
-A link to the deployed app (Netlify)
+[Petals & Pots]("https://petalsandpots.netlify.app")
 
 [Trello Board]("https://trello.com/b/SdwL81cx/plant-app")
 

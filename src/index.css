@@ -1,12 +1,9 @@
 body {
   margin: 0;
-  background-color: #f4f4f4;
+  background-color: #fffbe6;
   color: #333;
-  font-family: Arial, sans-serif;
+  font-family: 'Kalnia', serif;
   color: #27360e;
-  background-image: url(/images/PlantBackground.png);
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 a:-webkit-any-link {
@@ -35,7 +32,7 @@ html {
   padding: 0.5rem;
   width: 100%;
   margin: auto;
-  background-color: #849b6d;
+  background-color: #fffbe6;
   text-decoration: none;
 }
 
@@ -52,7 +49,7 @@ html {
   text-decoration: none; 
   color: inherit; 
   cursor: pointer; 
-  color: #ffffff; 
+  color: #27360e;
 }
 
 .search-nav {
@@ -68,39 +65,29 @@ input[type="text"] {
 }
 
 /* HOME PAGE */
-
 .home-page-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  gap: 20px; 
   background-color: #849b6d;
-  margin: 10%;
-}
-
-.home-page-image {
-  width: 50%;
-  margin: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center; 
 }
 
 .home-page-image img {
-  width: 100%; /* Adjusted width to 100% to ensure responsiveness */
+  width: 100%;
   height: auto;
 }
 
 .browse-button-container {
-  background-color: #849b6d;
-  width: 100%;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .browse-button {
-  padding: 20px;
-  margin: 10px;
+  margin-top: 10px; 
 }
+
 
   /* PLANT LIBRARY's */
   .container {
