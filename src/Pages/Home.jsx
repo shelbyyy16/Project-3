@@ -9,7 +9,7 @@ function Home() {
         <img src="/images/LandingPage.png" alt="Home Image" />
       </div>
       <div className="browse-button-container">
-        <h2>Gardening: where every day is Earth Day.</h2>
+        <h1>Gardening: where every day is Earth Day.</h1>
       <Link to="/indoorplants">
         <button className="browse-button">Browse Indoor Plants</button>
       </Link>

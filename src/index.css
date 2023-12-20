@@ -24,6 +24,7 @@ html {
   width: 100%;
   padding: 10px;
   background-color: #dee7d9;
+  font-size: x-small;
 }
 
 .nav {
@@ -37,12 +38,12 @@ html {
   text-decoration: none;
 }
 
-.home-nav,
+
 .login-logout-button {
   margin-right: auto; 
+  margin-left: 10px;
+  margin-top: 6px;
 }
-
-
 
 button {
   cursor: pointer;
@@ -50,6 +51,7 @@ button {
   border: none;
   background-color: #dee7d9;
   font-family:'Kalnia', serif;
+
 }
 
 .home-nav {
@@ -57,12 +59,13 @@ button {
   color: inherit; 
   cursor: pointer; 
   color: #27360e;
-  font-size: xx-large;
+  font-size: 32px;
 }
 
 .search-nav {
   margin-left: auto; 
   margin-right: 20px;
+  font-weight: 400;
   color: #27360e;
 }
 
@@ -73,12 +76,29 @@ input[type="text"] {
   border-radius: 4px;
 }
 
+.second-nav {
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  background-color: #27360e;
+  color: #dee7d9;
+  padding: 10px;
+
+  a {
+    color: #dee7d9;
+  }
+  a:hover {
+    cursor: pointer;
+  }
+}
+
 /* HOME PAGE */
 .home-page-container {
   display: grid;
   grid-template-columns: 1fr 1fr; 
   gap: 20px; 
   background-color: #849b6d;
+  
 }
 
 .home-page-image img {
@@ -90,11 +110,19 @@ input[type="text"] {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center; 
+  text-align: center; 
 }
 
 .browse-button {
   margin-top: 10px; 
+  font-size: medium;
+  padding: 10px;
+}
+
+.browse-button:hover{
+  background-color: #27360e;
+  color: #dee7d9;
 }
 
 
