@@ -89,6 +89,7 @@ input[type="text"] {
   }
   a:hover {
     cursor: pointer;
+    font-style: italic;
   }
 }
 
@@ -171,27 +172,19 @@ input[type="text"] {
   /* PLANT LIBRARY's */
   .container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); 
-    grid-auto-rows: minmax(250px, auto);
-    grid-gap: 1rem;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: repeat(2, minmax(50px, auto)); 
+    grid-gap: 2rem;
     margin: 0 auto;
-    max-width: 1200px;
+    max-width: 1200px; 
     padding: 1rem;
-}
-
-.plant-link {
-    width: 100%;
-    display: block;
-    text-decoration: none;
-    color: inherit;
 }
 
 .card {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 0.5fr;
     background-color: #849b6d;
     margin: 0;
-    border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease;
 
@@ -202,31 +195,22 @@ input[type="text"] {
 
     .plant-image {
         img {
-            max-width: 100%; 
+            max-width: 100%;
             height: 100%;
-            border-radius: 4px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
     }
+
     .content-container {
-        padding: 20px;
-        margin-left: 10px;
+        padding: 10px;
         text-align: left;
-        color:#27360e;
+        color: #27360e;
     }
-    .plant-title{
+
+    .plant-title {
         font-size: 1.5rem;
         font-weight: 600;
     }
-
-    ul {
-        margin-left: 0;
-        font-size: .80rem;
-        text-align: left;
-        list-style: none;
-        padding: 0;
-    }
-
 }
 
 h1 {

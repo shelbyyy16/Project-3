@@ -48,11 +48,6 @@ function IndoorPlants() {
                   </div>
                   <div className="content-container">
                     <span className="plant-title">{plant.common_name}</span>
-                  <ul>
-                    Cycle: {plant.cycle}<br></br><br></br>
-                    Watering: {plant.watering}<br></br><br></br>
-                    Sunlight: {plant.sunlight}<br></br><br></br>
-                  </ul>
                   </div>
                 </div>
               </Link>
