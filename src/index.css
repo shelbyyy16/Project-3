@@ -78,10 +78,17 @@ input[type="text"] {
   margin: 10%;
 }
 
-.home-page-image img{
+.home-page-image {
   width: 50%;
-  height: auto; 
   margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+.home-page-image img {
+  width: 100%; /* Adjusted width to 100% to ensure responsiveness */
+  height: auto;
 }
 
 .browse-button-container {
