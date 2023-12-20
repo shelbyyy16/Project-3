@@ -10,6 +10,7 @@ import PlantDetails from '../../Pages/PlantDetails';
 import MyGarden from '../../Pages/MyGarden';
 import Profile from '../../Pages/Profile';
 import Search from '../../Pages/Search';
+import FAQ from '../../Pages/FAQ';
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <Route path="/garden" element={<MyGarden />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/search" element={<Search searchQuery={searchQuery} />} />
+          <Route path="FAQ" element={ <FAQ />} />
         </Routes>
         <Footer />
       </main>
