@@ -3,6 +3,7 @@ import axios from "axios";
 
 function FAQ() {
     const [faq, setFaq] = useState([]);
+    const [expandedItems, setExpandedItems] = useState([]);
 
     useEffect(() => {
         async function fetchFaq() {
@@ -18,14 +19,24 @@ function FAQ() {
         fetchFaq();
     }, []);
 
+    const toggleItem = (itemId) => {
+        setExpandedItems((prevItems) => {
+            if (prevItems.includes(itemId)) {
+                return prevItems.filter((id) => id !== itemId);
+            } else {
+                return [...prevItems, itemId];
+            }
+        });
+    };
+
     return (
         <>
             <h1>Plant FAQ's</h1>
             <section className="faq-container">
                 {faq.map((item) => (
-                    <div key={item.id} className="faq-item">
-                        <h3>{item.question}</h3>
-                        <p>{item.answer}</p>
+                    <div key={item.id} className={`faq-item ${expandedItems.includes(item.id) ? 'expanded' : ''}`}>
+                        <h3 onClick={() => toggleItem(item.id)}>{item.question}</h3>
+                        {expandedItems.includes(item.id) && <p>{item.answer}</p>}
                     </div>
                 ))}
             </section>

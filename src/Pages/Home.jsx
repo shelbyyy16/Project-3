@@ -20,26 +20,29 @@ function Home() {
           </div>
         </div>
       </div>
+      <div className="spacer"></div>
       <div className="home-suggestions-container">
-        <Link to="/details/2193">
-          <div>
-            <img src="/images/jade.png" alt="Pothos" />
-            <button className="browse-button">Jade Plant</button>
-          </div>
-        </Link>
-        <Link to="/details/1846">
-          <div>
-            <img src="/images/spider.png" alt="Spider Plant" />
-            <button className="browse-button">Spider Plant</button>
-          </div>
-        </Link>
-        <Link to="/details/2774">
-          <div>
-            <img src="/images/pothos.png" alt="Pothos" />
-            <button className="browse-button">Pothos Plant</button>
-          </div>
-        </Link>
-      </div>
+  <h1>House Plants for Beginners</h1>
+  <Link to="/details/2193">
+    <div>
+      <img src="/images/jade.png" alt="Pothos" />
+      <button className="browse-button">Jade Plant</button>
+    </div>
+  </Link>
+  <Link to="/details/7168">
+    <div>
+      <img src="/images/snake.png" alt="Spider Plant" />
+      <button className="browse-button">Snake Plant</button>
+    </div>
+  </Link>
+  <Link to="/details/2774">
+    <div>
+      <img src="/images/pothos.png" alt="Pothos" />
+      <button className="browse-button">Pothos Plant</button>
+    </div>
+  </Link>
+</div>
+<div className="spacer"></div>
     </>
   );
 }

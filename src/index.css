@@ -126,10 +126,39 @@ input[type="text"] {
 .home-suggestions-container {
   border: 4px solid red;
   display: grid;
-  grid-template-columns: 3fr 1fr; 
-  gap: 20px; 
-
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  text-align: center;
 }
+
+.home-suggestions-container h1 {
+  grid-column: span 3;
+  margin-bottom: 20px;
+}
+
+.home-suggestions-container div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-suggestions-container img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+}
+
+.browse-button {
+  margin: 10px;
+  font-size: medium;
+  padding: 10px;
+}
+
+.spacer {
+  border: 4px solid yellow;
+  height: 100px;
+}
+
 
 
   /* PLANT LIBRARY's */
@@ -302,6 +331,13 @@ h1 {
   color: #fff;
   padding: 20px;
 
+}
+
+
+/* FAQ Page */
+
+.faq-container {
+  background-color: #849b6d;
 }
 
 
