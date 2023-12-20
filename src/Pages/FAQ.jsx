@@ -58,21 +58,22 @@ function FAQ() {
       <div className="stock-image">
         <img src="/images/PottedPlantsVintage.png" alt="" />
       </div>
-
-      {faqData.map((faq, index) => (
-        <div
-          key={index}
-          className={`faq-item ${openIndex === index ? "open" : ""}`}
-        >
-          <h1 onClick={() => handleAccordionClick(index)}>{faq.question}</h1>
-          {openIndex === index && (
-            <ul>
-              <li>{faq.answer}</li>
-            </ul>
-          )}
-        </div>
-      ))}
+      <div className="faq-answers">
+        {faqData.map((faq, index) => (
+          <div
+            key={index}
+            className={`faq-item ${openIndex === index ? "open" : ""}`}
+          >
+            <div onClick={() => handleAccordionClick(index)}>
+              <h2>+{faq.question}</h2>
+              {openIndex === index && <p>{faq.answer}</p>}
+            </div>
+          </div>
+        ))}
+      </div>
+     
     </div>
+    
   );
 }
 
