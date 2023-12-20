@@ -7,7 +7,6 @@ import Home from "../../Pages/Home";
 import IndoorPlants from "../../Pages/IndoorPlants";
 import OutdoorPlants from "../../Pages/OutdoorPlants";
 import PlantDetails from "../../Pages/PlantDetails";
-
 import Profile from "../../Pages/Profile";
 import Search from "../../Pages/Search";
 import FAQ from "../../Pages/FAQ";

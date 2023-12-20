@@ -93,6 +93,14 @@ input[type="text"] {
 }
 
 /* HOME PAGE */
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
 .home-page-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -124,7 +132,6 @@ input[type="text"] {
 }
 
 .home-suggestions-container {
-  border: 4px solid red;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
@@ -155,7 +162,7 @@ input[type="text"] {
 }
 
 .spacer {
-  border: 4px solid yellow;
+
   height: 100px;
 }
 

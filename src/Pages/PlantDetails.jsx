@@ -12,7 +12,8 @@ function PlantDetails() {
       try {
         const apiKey = import.meta.env.VITE_API_KEY;
         const response = await axios.get(
-          `https://perenual.com/api/species/details/${id}?key=${apiKey}`
+          `https://perenual.com/api/species/details/${id}?key=${apiKey}`,
+          `https://perenual.com/api/species-care-guide-list?key=${apiKey}&species_id=${id}`
         );
         setPlantDetails(response.data);
       } catch (error) {
@@ -43,16 +44,15 @@ function PlantDetails() {
             <div className="details-content-container">
               <span className="plant-title">
                 {plantDetails.common_name || "Common Name not available"}
-              </span> 
-              
+              </span> <br></br>
+              {plantDetails.scientific_name && plantDetails.scientific_name[0]}
               <ul>
-                <li>Scientific Name: {plantDetails.scientific_name && plantDetails.scientific_name[0]}</li>
-                <li>Indoor Plant: {plantDetails.indoor ? "Yes" : "No"}</li>
-                <li>Watering Needs: {plantDetails.watering}</li>
-                <li>Sunlight Needs: {plantDetails.sunlight && plantDetails.sunlight.join(", ")}</li>
-                <li>Toxic to humans: {plantDetails.poisonous_to_humans ? "Yes" : "No"}</li>
-                <li>Toxic to pets: {plantDetails.poisonous_to_pets ? "Yes" : "No"}</li>
-                <li>Care Level: {plantDetails.care_level}</li>
+                <li><span>Indoor Plant:</span> {plantDetails.indoor ? "Yes" : "No"}</li>
+                <li><span>Watering Needs:</span> {plantDetails.watering}</li>
+                <li><span>Sunlight Needs:</span> {plantDetails.sunlight && plantDetails.sunlight.join(", ")}</li>
+                <li><span>Toxic to humans:</span> {plantDetails.poisonous_to_humans ? "Yes" : "No"}</li>
+                <li><span>Toxic to pets:</span> {plantDetails.poisonous_to_pets ? "Yes" : "No"}</li>
+                <li><span>Care Level:</span> {plantDetails.care_level}</li>
               </ul>
             </div>
           </div>
