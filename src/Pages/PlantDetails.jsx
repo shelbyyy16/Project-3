@@ -2,6 +2,13 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 
+function formatCommonName(name) {
+  return name
+    .split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+}
+
 function PlantDetails() {
   const { id } = useParams();
   const [plantDetails, setPlantDetails] = useState(null);
@@ -43,9 +50,13 @@ function PlantDetails() {
             </div>
             <div className="details-content-container">
               <span className="plant-title">
-                {plantDetails.common_name || "Common Name not available"}
+                {formatCommonName(plantDetails.common_name) || "Common Name not available"}
               </span> <br></br>
-              {plantDetails.scientific_name && plantDetails.scientific_name[0]}
+              {plantDetails.scientific_name && (
+                <span className="scientific-name">
+                  {formatCommonName(plantDetails.scientific_name[0])}
+                </span>
+              )}
               <ul>
                 <li><span>Indoor Plant:</span> {plantDetails.indoor ? "Yes" : "No"}</li>
                 <li><span>Watering Needs:</span> {plantDetails.watering}</li>

@@ -2,6 +2,13 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
+function formatCommonName(commonName) {
+  return commonName
+    .split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+}
+
 function IndoorPlants() {
   const [plants, setPlants] = useState([]);
 
@@ -21,8 +28,11 @@ function IndoorPlants() {
     fetchPlants();
   }, []);
 
-  const uniquePlants = Array.from(new Set(plants.map(plant => plant.common_name)))
-    .map(commonName => plants.find(plant => plant.common_name === commonName));
+  const uniquePlants = Array.from(
+    new Set(plants.map((plant) => plant.common_name))
+  ).map((commonName) =>
+    plants.find((plant) => plant.common_name === commonName)
+  );
 
   return (
     <>
@@ -47,7 +57,9 @@ function IndoorPlants() {
                     />
                   </div>
                   <div className="content-container">
-                    <span className="plant-title">{plant.common_name}</span>
+                    <span className="plant-title">
+                      {formatCommonName(plant.common_name)}
+                    </span>
                   </div>
                 </div>
               </Link>

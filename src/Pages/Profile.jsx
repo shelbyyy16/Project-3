@@ -17,15 +17,12 @@ const Profile = () => {
     isAuthenticated && (
       <div className="profile-container">
         <div className="profile-card">
-          <div className="profile-image">
-            <img src={user.picture} alt={""} />
+            <h1>Welcome to your garden, {user.name}</h1>
           </div>
-          <div className="profile-details">
-            <h2>{user.name}</h2>
-            <p>{user.email}</p>
+          <div className="stock-image">
+            <img src="/images/PottedPlantsVintage.png" alt="" />
           </div>
         </div>
-      </div>
     )
   );
 };

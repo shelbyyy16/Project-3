@@ -9,7 +9,10 @@ Note: If your user needs take any specific steps to navigate, interact, or activ
 ## Technologies Used:
 - React
 - Javascript
-- 
+- Perenual API
+
+## Acknoledgements
+- Stock images are from Canva
 
 Getting Started: 
 

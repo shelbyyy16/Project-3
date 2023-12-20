@@ -22,7 +22,7 @@ function Header({ setSearchQuery }) {
             {!isLoading ? (
               isAuthenticated ? (
                 <span>
-                  <Link to="/profile">Profile</Link> <LogoutButton />
+                  <Link to="/profile"><button>Profile</button></Link> <LogoutButton />
                 </span>
               ) : (
                 <LoginButton />
