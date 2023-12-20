@@ -282,6 +282,11 @@ h1 {
 .profile-card {
   padding: 20px;
   background-color:#849b6d; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center; 
 }
 
 
@@ -306,14 +311,22 @@ h1 {
 
 .faq-answers {
   margin-bottom: 100px;
+  margin-left: 20px;
+  margin-top: 20px;
 }
 
-.faq-item h2 {
+.faq-item h3 {
   text-align: left;
+  margin-top: 30px;
+}
+
+.faq-item h3:hover {
+  cursor: pointer;
 }
 
 .faq-item p {
   text-align: left;
+
 }
 
 /* 
