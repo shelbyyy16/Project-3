@@ -296,8 +296,24 @@ h1 {
 
 /* FAQ Page */
 
-.faq-container {
-  background-color: #849b6d;
+.faq-item {
+  margin-bottom: 10px;
+
+h1 {
+  cursor: pointer;
+  margin-bottom: 5px;
+  font-size: 18px;
+  color: #333; /* Set your desired text color */
+}
+
+p {
+  display: none;
+  margin-top: 5px;
+}
+}
+
+.faq-item.open p {
+  display: block;
 }
 
 

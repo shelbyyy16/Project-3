@@ -1,47 +1,79 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useState } from "react";
 
 function FAQ() {
-    const [faq, setFaq] = useState([]);
-    const [expandedItems, setExpandedItems] = useState([]);
+  const [openIndex, setOpenIndex] = useState(null);
 
-    useEffect(() => {
-        async function fetchFaq() {
-            try {
-                const apiKey = import.meta.env.VITE_API_KEY;
-                const response = await axios.get(`https://perenual.com/api/article-faq-list?key=${apiKey}`);
-                setFaq(response.data.data);
-            } catch (error) {
-                console.error("Error fetching FAQ's", error);
-            }
-        }
+  const handleAccordionClick = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
 
-        fetchFaq();
-    }, []);
+  const faqData = [
+    {
+      question: "Can I keep my indoor plants in the same pot indefinitely?",
+      answer:
+        "No, most indoor plants benefit from repotting every 1-2 years to refresh the soil, provide more space for root growth, and inspect the roots for signs of disease or overcrowding.",
+    },
+    {
+      question: "How often should I water my indoor plants?",
+      answer:
+        "The frequency of watering depends on the type of plant, its size, and the conditions in your home. Check the soil moisture regularly and water when the top inch of soil feels dry. Be sure not to overwater, as this can lead to root rot.",
+    },
+    {
+      question: "Is it possible to grow a vegetable garden in a small space?",
+      answer:
+        "Yes, it is possible to grow a vegetable garden in a small space. Gardening in a small space can be as simple as growing a few containerized plants in pots and raised beds, or as elaborate as vertically stacking planters, hanging pouches, and hanging baskets on a wall, railing, or fence. Regardless of the size of the space you are working with, some simple techniques such as companion planting, organic fertilizers, and water conservation can help you get the most out of your small vegetable garden.",
+    },
+    {
+      question: "How can I start a garden on a budget?",
+      answer:
+        "Begin with seeds instead of plants, reuse containers, make your compost, and take advantage of local plant exchanges. Many gardening centers also have sales or clearance sections.",
+    },
+    {
+      question: "What is the difference between annuals and perennials?",
+      answer:
+        "Annuals complete their life cycle in one growing season and need to be replanted each year. Perennials live for multiple years and typically go dormant in the winter, returning in the spring.",
+    },
+    {
+      question: "How do I deal with pests in my garden?",
+      answer:
+        "Use a combination of methods, including natural predators, companion planting, and organic pesticides. Regularly inspect plants for signs of pests and take action promptly. Neem oil, insecticidal soap, and diatomaceous earth are common organic options.",
+    },
+    {
+      question: "What type of soil is best for my garden",
+      answer:
+        "Well-draining soil rich in organic matter is ideal for most plants. You can improve soil quality by adding compost. Conduct a soil test to determine specific needs for your garden.",
+    },
+  ];
 
-    const toggleItem = (itemId) => {
-        setExpandedItems((prevItems) => {
-            if (prevItems.includes(itemId)) {
-                return prevItems.filter((id) => id !== itemId);
-            } else {
-                return [...prevItems, itemId];
-            }
-        });
-    };
+  return (
+    <div className="profile-container">
+      <div className="profile-card">
+        <h1>Plant FAQ's</h1>
+        <h2>
+          Did you just buy a plant on a whim at the store and are now panicking
+          how to care for it?
+        </h2>
+        <h3>Here are some of the most commonly asked questions</h3>
+      </div>
+      <div className="stock-image">
+        <img src="/images/PottedPlantsVintage.png" alt="" />
+      </div>
 
-    return (
-        <>
-            <h1>Plant FAQ's</h1>
-            <section className="faq-container">
-                {faq.map((item) => (
-                    <div key={item.id} className={`faq-item ${expandedItems.includes(item.id) ? 'expanded' : ''}`}>
-                        <h3 onClick={() => toggleItem(item.id)}>{item.question}</h3>
-                        {expandedItems.includes(item.id) && <p>{item.answer}</p>}
-                    </div>
-                ))}
-            </section>
-        </>
-    );
+      {faqData.map((faq, index) => (
+        <div
+          key={index}
+          className={`faq-item ${openIndex === index ? "open" : ""}`}
+        >
+          <h1 onClick={() => handleAccordionClick(index)}>{faq.question}</h1>
+          {openIndex === index && (
+            <ul>
+              <li>{faq.answer}</li>
+            </ul>
+          )}
+        </div>
+      ))}
+    </div>
+  );
 }
 
 export default FAQ;
