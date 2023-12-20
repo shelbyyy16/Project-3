@@ -20,9 +20,9 @@ Getting Started:
 
 [Trello Board]("https://trello.com/b/SdwL81cx/plant-app")
 
-Note: If you have special requirements for setting up the tool (such as providing an API key) - provide all relevant instructions in this section.
 
 Next Steps: 
-- 
-- 
-- 
+- Make the App mobile friendly
+- Add a favoriting capability for signed in users to store their favorite plants
+- Make a more robust search feature
+- Create the capability to share plants you like with others
