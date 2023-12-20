@@ -95,10 +95,9 @@ input[type="text"] {
 /* HOME PAGE */
 .home-page-container {
   display: grid;
-  grid-template-columns: 1fr 1fr; 
-  gap: 20px; 
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
   background-color: #849b6d;
-  
 }
 
 .home-page-image img {
@@ -108,21 +107,28 @@ input[type="text"] {
 
 .browse-button-container {
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center; 
-  text-align: center; 
+  align-items: center;
+  text-align: center;
 }
 
 .browse-button {
-  margin-top: 10px; 
+  margin: 10px;
   font-size: medium;
   padding: 10px;
 }
 
-.browse-button:hover{
+.browse-button:hover {
   background-color: #27360e;
   color: #dee7d9;
+}
+
+.home-suggestions-container {
+  border: 4px solid red;
+  display: grid;
+  grid-template-columns: 3fr 1fr; 
+  gap: 20px; 
+
 }
 
 
