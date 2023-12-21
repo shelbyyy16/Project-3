@@ -13,7 +13,7 @@ function IndoorPlants() {
   const [plants, setPlants] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
-  const perPage = 12; // Set the desired number of plants per page
+  const perPage = 12; 
 
   useEffect(() => {
     async function fetchPlants(page) {
@@ -43,6 +43,12 @@ function IndoorPlants() {
     plants.find((plant) => plant.common_name === commonName)
   );
 
+  const visiblePlants = uniquePlants
+    .filter((plant, index) => index < currentPage * perPage)
+    .filter(
+      (plant) => plant.default_image && plant.default_image.regular_url
+    );
+
   const loadMore = () => {
     setCurrentPage((prevPage) => prevPage + 1);
   };
@@ -51,32 +57,27 @@ function IndoorPlants() {
     <>
       <h1>Indoor Plant Library</h1>
       <section className="container">
-        {uniquePlants &&
-          uniquePlants
-            .filter(
-              (plant) => plant.default_image && plant.default_image.regular_url
-            )
-            .map((plant) => (
-              <Link
-                to={`/details/${plant.id}`}
-                key={plant.id}
-                className="plant-link"
-              >
-                <div className="card">
-                  <div className="plant-image">
-                    <img
-                      src={plant.default_image.regular_url}
-                      alt={plant.common_name}
-                    />
-                  </div>
-                  <div className="content-container">
-                    <span className="plant-title">
-                      {formatCommonName(plant.common_name)}
-                    </span>
-                  </div>
-                </div>
-              </Link>
-            ))}
+        {visiblePlants.map((plant) => (
+          <Link
+            to={`/details/${plant.id}`}
+            key={plant.id}
+            className="plant-link"
+          >
+            <div className="card">
+              <div className="plant-image">
+                <img
+                  src={plant.default_image.regular_url}
+                  alt={plant.common_name}
+                />
+              </div>
+              <div className="content-container">
+                <span className="plant-title">
+                  {formatCommonName(plant.common_name)}
+                </span>
+              </div>
+            </div>
+          </Link>
+        ))}
       </section>
       {currentPage < totalPages && (
         <div className="show-more-container">
