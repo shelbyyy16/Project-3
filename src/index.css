@@ -233,7 +233,8 @@ h1 {
 
 .details-plant-image {
   width: 50%;
-
+  height: auto;
+  display: flex;
   justify-content: center; 
   align-items: center; 
 }
@@ -241,7 +242,7 @@ h1 {
 .details-plant-image img {
   max-width: 100%;
   height: 100%;
-}
+} 
 
 .details-content-container {
   width: 50%;
