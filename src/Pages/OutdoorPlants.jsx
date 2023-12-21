@@ -27,7 +27,7 @@ function OutdoorPlants() {
           setPlants((prevPlants) => [...prevPlants, ...response.data.data]);
           setTotalPages(Math.ceil(response.data.total / perPage));
         } else {
-          console.error("Invalid API response format:", response.data);
+          console.error("Invalid API response", response.data);
         }
       } catch (error) {
         console.error("Error fetching plant", error);
