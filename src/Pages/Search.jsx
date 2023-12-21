@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 function Search({ searchQuery }) {
   const [searchResults, setSearchResults] = useState([]);
@@ -14,18 +14,17 @@ function Search({ searchQuery }) {
         );
 
         const filteredResults = response.data.data.filter(
-          (result) =>
-            (result.common_name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-              result.scientific_name.toLowerCase().includes(searchQuery.toLowerCase())) &&
+          (result) => 
+            result.common_name.toLowerCase().includes(searchQuery.toLowerCase()) &&
             result.default_image && result.default_image.regular_url
         );
 
-        const uniqueResults = Array.from(new Set(filteredResults.map((result) => result.id)))
-          .map((id) => filteredResults.find((result) => result.id === id));
+        const uniqueResults = Array.from(new Set(filteredResults.map((result) => result.common_name)))
+          .map((commonName) => filteredResults.find((result) => result.common_name === commonName));
 
         setSearchResults(uniqueResults);
       } catch (error) {
-        console.error('Error fetching search results', error);
+        console.error("Error fetching search results", error);
       }
     }
 
@@ -35,13 +34,6 @@ function Search({ searchQuery }) {
       setSearchResults([]);
     }
   }, [searchQuery]);
-
-  const capitalizeWords = (inputString) => {
-    return inputString
-      .split(' ')
-      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(' ');
-  };
 
   return (
     <div>
@@ -53,11 +45,14 @@ function Search({ searchQuery }) {
               <div className="card">
                 <div className="plant-image">
                   {result.default_image && result.default_image.regular_url && (
-                    <img src={result.default_image.regular_url} alt={result.common_name} />
+                    <img
+                      src={result.default_image.regular_url}
+                      alt={result.common_name}
+                    />
                   )}
                 </div>
                 <div className="content-container">
-                  <span className="plant-title">{capitalizeWords(result.common_name)}</span>
+                  <span className="plant-title">{result.common_name}</span>
                 </div>
               </div>
             </Link>
