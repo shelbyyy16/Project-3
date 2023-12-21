@@ -23,9 +23,11 @@ Vist [Petals & Pots](https://petalsandpots.netlify.app)
 ## Technologies Used:
 - React
 - Javascript
-- Axiois
+- Axios
 - VITE
 - Perenual API
+- HTML
+- CSS
 
 Check out my [Trello Board](https://trello.com/b/SdwL81cx/plant-app)
 
