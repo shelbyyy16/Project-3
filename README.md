@@ -1,5 +1,5 @@
 
-## Petals $ Pots 
+## 🌱 Petals & Pots 🌱
 Contains a description of what the app does and optional background info.
 
 User Flow(s): A screenshot of your app’s landing page and the core features in your app.
@@ -11,17 +11,19 @@ Note: If your user needs take any specific steps to navigate, interact, or activ
 - Javascript
 - Perenual API
 
-## Acknoledgements
+Check out my [Trello Board](https://trello.com/b/SdwL81cx/plant-app)
+
+
+## Acknowledgements
 - Stock images are from Canva
 
-Getting Started: 
+## Getting Started: 
 
-[Petals & Pots]("https://petalsandpots.netlify.app")
-
-[Trello Board]("https://trello.com/b/SdwL81cx/plant-app")
+Vist [Petals & Pots](https://petalsandpots.netlify.app) here
 
 
-Next Steps: 
+
+## Next Steps: 
 - Make the App mobile friendly
 - Add a favoriting capability for signed in users to store their favorite plants
 - Make a more robust search feature
