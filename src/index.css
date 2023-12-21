@@ -2,7 +2,7 @@ body {
   margin: 0;
   background-color: #dee7d9;
   color: #333;
-  font-family: 'Kalnia', serif;
+  font-family: "Kalnia", serif;
   color: #27360e;
 }
 
@@ -11,7 +11,6 @@ a:-webkit-any-link {
   cursor: pointer;
   text-decoration: none;
 }
-
 
 html {
   scroll-behavior: smooth;
@@ -29,8 +28,8 @@ html {
 
 .nav {
   display: flex;
-  justify-content: space-between; 
-  align-items: center; 
+  justify-content: space-between;
+  align-items: center;
   padding: 0.5rem;
   width: 100%;
   margin: auto;
@@ -38,9 +37,8 @@ html {
   text-decoration: none;
 }
 
-
 .login-logout-button {
-  margin-right: auto; 
+  margin-right: auto;
   margin-left: 10px;
   margin-top: 6px;
 }
@@ -50,20 +48,19 @@ button {
   color: #27360e;
   border: none;
   background-color: #dee7d9;
-  font-family:'Kalnia', serif;
-
+  font-family: "Kalnia", serif;
 }
 
 .home-nav {
-  text-decoration: none; 
-  color: inherit; 
-  cursor: pointer; 
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
   color: #27360e;
   font-size: 32px;
 }
 
 .search-nav {
-  margin-left: auto; 
+  margin-left: auto;
   margin-right: 20px;
   font-weight: 400;
   color: #27360e;
@@ -162,130 +159,141 @@ input[type="text"] {
 }
 
 .spacer {
-
   height: 100px;
 }
 
-
-
-  /* PLANT LIBRARY's */
-  .container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: repeat(2, minmax(50px, auto)); 
-    grid-gap: 2rem;
-    margin: 0 auto;
-    max-width: 1200px; 
-    padding: 1rem;
+/* PLANT LIBRARY's */
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: repeat(2, minmax(50px, auto));
+  grid-gap: 2rem;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 1rem;
 }
 
 .card {
-    display: grid;
-    grid-template-rows: 1fr 0.5fr;
-    background-color: #849b6d;
-    margin: 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease;
+  display: grid;
+  grid-template-rows: 1fr 0.5fr;
+  background-color: #849b6d;
+  margin: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
 
-    &:hover {
-        background-color: #fffbe6;
-        color: #333;
-    }
+  &:hover {
+    background-color: #fffbe6;
+    color: #333;
+  }
 
-    .plant-image {
-        img {
-            max-width: 100%;
-            height: 100%;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
+  .plant-image {
+    img {
+      max-width: 100%;
+      height: 100%;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
+  }
 
-    .content-container {
-        padding: 10px;
-        text-align: left;
-        color: #27360e;
-    }
+  .content-container {
+    padding: 10px;
+    text-align: left;
+    color: #27360e;
+  }
 
-    .plant-title {
-        font-size: 1.5rem;
-        font-weight: 600;
-    }
+  .plant-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
 }
 
 h1 {
-    text-align: center;
-    margin: 20px 0;
-    color: #27360e;
+  text-align: center;
+  margin: 20px 0;
+  color: #27360e;
 }
 
 /* DETAILS PAGE */
 .details-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .details-card {
-    display: flex;
-    flex-direction: row;
-    background-color: #849b6d;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .details-plant-image {
-    width: 50%;
-    padding: 20px;
-    
-  }
-  
-  .details-plant-image img {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  .details-content-container {
-    width: 50%;
-    padding: 20px;
-    box-sizing: border-box;
-    color: #27360e;
-  }
-  
-  .plant-title {
-    font-size: 1.5em;
-    font-weight: bold;
-    margin-bottom: 20px; 
-  }
-  
-  ul {
-    list-style: none;
-    padding: 0;
-    margin-top: 20px;
-  }
-  
-  ul li {
-    margin-bottom: 10px;
-  }
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 65%;
+  font-family: "Lora", serif;
+}
 
-h1 {
-    text-align: center;
-    margin: 20px 0;
-    color: #27360e;
+.details-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  background-color: #849b6d;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.details-plant-image {
+  width: 50%;
+
+  justify-content: center; 
+  align-items: center; 
+}
+
+.details-plant-image img {
+  max-width: 100%;
+  height: 100%;
+}
+
+.details-content-container {
+  width: 50%;
+  padding: 20px;
+  box-sizing: border-box;
+  color: #27360e;
+  margin-right: 30px;
+}
+
+.plant-title {
+  font-size: 2em;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-family: "Kalnia", serif;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+.details {
+  font-weight: 600;
+}
+.details-description {
+  font-size: large;
+}
+
+.scientific-name {
+  font-style: italic;
 }
 
 /* PROFILE PAGE */
 .profile-container {
   display: grid;
-  grid-template-columns: 1fr 1fr; 
+  grid-template-columns: 1fr 1fr;
 }
 
 .profile-card {
   padding: 20px;
-  background-color: #849b6d; 
+  background-color: #849b6d;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center; 
+  text-align: center;
 }
 
 .stock-image img {
@@ -300,7 +308,6 @@ h1 {
   align-items: center;
   justify-content: center;
 }
-
 
 .favorites-container h2 {
   margin-top: 0;
@@ -336,7 +343,6 @@ h1 {
 
 .faq-item p {
   text-align: left;
-
 }
 
 /* 

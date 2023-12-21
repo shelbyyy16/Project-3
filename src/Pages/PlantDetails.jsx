@@ -56,14 +56,14 @@ function PlantDetails() {
                 <span className="scientific-name">
                   {formatCommonName(plantDetails.scientific_name[0])}
                 </span>
-              )}
+              )} <br></br><br></br>
+              <span className="details-description"> {plantDetails.description}</span>
               <ul>
-                <li><span>Indoor Plant:</span> {plantDetails.indoor ? "Yes" : "No"}</li>
-                <li><span>Watering Needs:</span> {plantDetails.watering}</li>
-                <li><span>Sunlight Needs:</span> {plantDetails.sunlight && plantDetails.sunlight.join(", ")}</li>
-                <li><span>Toxic to humans:</span> {plantDetails.poisonous_to_humans ? "Yes" : "No"}</li>
-                <li><span>Toxic to pets:</span> {plantDetails.poisonous_to_pets ? "Yes" : "No"}</li>
-                <li><span>Care Level:</span> {plantDetails.care_level}</li>
+                <li><span className="details">Watering Needs:</span> {plantDetails.watering}</li>
+                <li><span className="details">Sunlight Needs:</span> {plantDetails.sunlight && plantDetails.sunlight.join(", ")}</li>
+                <li><span className="details">Toxic to humans:</span> {plantDetails.poisonous_to_humans ? "Yes" : "No"}</li>
+                <li><span className="details">Toxic to pets:</span> {plantDetails.poisonous_to_pets ? "Yes" : "No"}</li>
+                <li><span className="details">Care Level:</span> {plantDetails.maintenance}</li>
               </ul>
             </div>
           </div>
