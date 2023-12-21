@@ -13,18 +13,19 @@ function IndoorPlants() {
   const [plants, setPlants] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
+  const perPage = 12; // Set the desired number of plants per page
 
   useEffect(() => {
     async function fetchPlants(page) {
       try {
         const apiKey = import.meta.env.VITE_API_KEY;
         const response = await axios.get(
-          `https://perenual.com/api/species-list?key=${apiKey}&indoor=1&order=asc&page=${page}`
+          `https://perenual.com/api/species-list?key=${apiKey}&indoor=1&order=asc&page=${page}&per_page=${perPage}`
         );
     
         if (response.data && response.data.total) {
           setPlants(response.data.data);
-          setTotalPages(Math.ceil(response.data.total / response.data.per_page));
+          setTotalPages(Math.ceil(response.data.total / perPage));
         } else {
           console.error("Invalid API response format:", response.data);
         }
@@ -34,7 +35,7 @@ function IndoorPlants() {
     }
     
     fetchPlants(currentPage);
-  }, [currentPage]);
+  }, [currentPage, perPage]);
 
   const uniquePlants = Array.from(
     new Set(plants.map((plant) => plant.common_name))
