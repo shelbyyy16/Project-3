@@ -22,9 +22,9 @@ function IndoorPlants() {
         const response = await axios.get(
           `https://perenual.com/api/species-list?key=${apiKey}&indoor=1&order=asc&page=${page}&per_page=${perPage}`
         );
-    
+
         if (response.data && response.data.total) {
-          setPlants(response.data.data);
+          setPlants((prevPlants) => [...prevPlants, ...response.data.data]);
           setTotalPages(Math.ceil(response.data.total / perPage));
         } else {
           console.error("Invalid API response format:", response.data);
@@ -33,7 +33,7 @@ function IndoorPlants() {
         console.error("Error fetching plant", error);
       }
     }
-    
+
     fetchPlants(currentPage);
   }, [currentPage, perPage]);
 
@@ -43,8 +43,8 @@ function IndoorPlants() {
     plants.find((plant) => plant.common_name === commonName)
   );
 
-  const paginate = (pageNumber) => {
-    setCurrentPage(pageNumber);
+  const loadMore = () => {
+    setCurrentPage((prevPage) => prevPage + 1);
   };
 
   return (
@@ -78,17 +78,13 @@ function IndoorPlants() {
               </Link>
             ))}
       </section>
-      <div className="pagination">
-        {Array.from({ length: totalPages }).map((_, index) => (
-          <button
-            key={index + 1}
-            onClick={() => paginate(index + 1)}
-            className={currentPage === index + 1 ? "active" : ""}
-          >
-            {index + 1}
+      {currentPage < totalPages && (
+        <div className="show-more-container">
+          <button onClick={loadMore} className="show-more-button">
+            Show More
           </button>
-        ))}
-      </div>
+        </div>
+      )}
     </>
   );
 }

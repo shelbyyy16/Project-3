@@ -275,12 +275,20 @@ h1 {
   color: #27360e;
 }
 
-.pagination {
+.show-more-container {
   text-align: center;
   margin-top: 80px;
  
   button {
     font-size: larger;
+    background-color: #27360e;
+    color: #dee7d9;
+    padding: 10px;
+  }
+
+  button:hover{
+    background-color:#849b6d;
+    color: #27360e;
   }
 }
 
