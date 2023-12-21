@@ -15,14 +15,20 @@ const Profile = () => {
 
   return (
     isAuthenticated && (
-      <div className="profile-container">
-        <div className="profile-card">
+      <>
+        <div className="profile-container">
+          <div className="profile-card">
             <h1>Welcome to your garden, {user.name}</h1>
           </div>
           <div className="stock-image">
             <img src="/images/PottedPlantsVintage.png" alt="" />
           </div>
         </div>
+        <div className="favorites-container">
+          <div className="spacer"></div>
+          <h2>Future Feature to come: Your Favorite Plants</h2>
+        </div>
+      </>
     )
   );
 };
