@@ -19,8 +19,7 @@ Check out my [Trello Board](https://trello.com/b/SdwL81cx/plant-app)
 
 ## Getting Started: 
 
-Vist [Petals & Pots](https://petalsandpots.netlify.app) here
-
+Vist [Petals & Pots](https://petalsandpots.netlify.app) 
 
 
 ## Next Steps: 
