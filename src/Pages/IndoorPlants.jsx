@@ -11,28 +11,40 @@ function formatCommonName(commonName) {
 
 function IndoorPlants() {
   const [plants, setPlants] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
 
   useEffect(() => {
-    async function fetchPlants() {
+    async function fetchPlants(page) {
       try {
         const apiKey = import.meta.env.VITE_API_KEY;
         const response = await axios.get(
-          `https://perenual.com/api/species-list?key=${apiKey}&indoor=1&order=asc`
+          `https://perenual.com/api/species-list?key=${apiKey}&indoor=1&order=asc&page=${page}`
         );
-        setPlants(response.data.data);
+    
+        if (response.data && response.data.total) {
+          setPlants(response.data.data);
+          setTotalPages(Math.ceil(response.data.total / response.data.per_page));
+        } else {
+          console.error("Invalid API response format:", response.data);
+        }
       } catch (error) {
         console.error("Error fetching plant", error);
       }
     }
-
-    fetchPlants();
-  }, []);
+    
+    fetchPlants(currentPage);
+  }, [currentPage]);
 
   const uniquePlants = Array.from(
     new Set(plants.map((plant) => plant.common_name))
   ).map((commonName) =>
     plants.find((plant) => plant.common_name === commonName)
   );
+
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
 
   return (
     <>
@@ -65,6 +77,17 @@ function IndoorPlants() {
               </Link>
             ))}
       </section>
+      <div className="pagination">
+        {Array.from({ length: totalPages }).map((_, index) => (
+          <button
+            key={index + 1}
+            onClick={() => paginate(index + 1)}
+            className={currentPage === index + 1 ? "active" : ""}
+          >
+            {index + 1}
+          </button>
+        ))}
+      </div>
     </>
   );
 }
