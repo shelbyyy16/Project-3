@@ -292,6 +292,17 @@ h1 {
   }
 }
 
+.alphabet-nav {
+  text-align: center;
+  font-size: larger;
+
+  .letter {
+    padding: 10px;
+  }
+
+  }
+
+
 /* DETAILS PAGE */
 .details-container {
   margin: auto;
