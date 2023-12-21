@@ -11,6 +11,8 @@ function formatCommonName(commonName) {
 
 function IndoorPlants() {
   const [plants, setPlants] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [plantsPerPage] = useState(8);
 
   useEffect(() => {
     async function fetchPlants() {
@@ -28,18 +30,25 @@ function IndoorPlants() {
     fetchPlants();
   }, []);
 
+  const indexOfLastPlant = currentPage * plantsPerPage;
+  const indexOfFirstPlant = indexOfLastPlant - plantsPerPage;
+  const currentPlants = plants.slice(indexOfFirstPlant, indexOfLastPlant);
+
   const uniquePlants = Array.from(
-    new Set(plants.map((plant) => plant.common_name))
+    new Set(currentPlants.map((plant) => plant.common_name))
   ).map((commonName) =>
-    plants.find((plant) => plant.common_name === commonName)
+    currentPlants.find((plant) => plant.common_name === commonName)
   );
 
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+  console.log("Total plants:", plants.length);
   return (
     <>
       <h1>Indoor Plant Library</h1>
       <section className="container">
-        {uniquePlants &&
-          uniquePlants
+        {currentPlants &&
+          currentPlants
             .filter(
               (plant) => plant.default_image && plant.default_image.regular_url
             )
@@ -65,8 +74,22 @@ function IndoorPlants() {
               </Link>
             ))}
       </section>
+      <div className="pagination">
+        {Array.from({ length: Math.ceil(plants.length / plantsPerPage) }).map(
+          (_, index) => (
+            <button
+              key={index}
+              onClick={() => paginate(index + 1)}
+              className={currentPage === index + 1 ? "active" : ""}
+            >
+              {index + 1}
+            </button>
+          )
+        )}
+      </div>
     </>
   );
 }
 
-export default IndoorPlants;
+export default IndoorPlants
+
