@@ -47,15 +47,15 @@ function FAQ() {
 
   return (
     <div className="profile-container">
+      <div className="stock-image">
+        <img src="/images/FAQpage.png" alt="" />
+      </div>
       <div className="profile-card">
         <h1>Plant FAQ's</h1>
         <h2>
           Did you just buy a plant on a whim and are now panicking how to care for it?
         </h2>
         <h3>Here are some of the most commonly asked questions</h3>
-      </div>
-      <div className="stock-image">
-        <img src="/images/FAQpage.png" alt="" />
       </div>
       <div className="faq-answers">
         {faqData.map((faq, index) => (
@@ -70,9 +70,7 @@ function FAQ() {
           </div>
         ))}
       </div>
-     
     </div>
-    
   );
 }
 
