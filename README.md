@@ -23,6 +23,12 @@ Whether you're a plant enthusiast or just starting your gardening journey, Petal
 
 Vist [Petals & Pots](https://petalsandpots.netlify.app) 
 
+#### Note: The API only allows for 100 requests a day
+
+
+
+
+
 
 ## Technologies Used:
 - React
