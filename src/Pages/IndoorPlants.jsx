@@ -12,23 +12,30 @@ function formatCommonName(commonName) {
 function IndoorPlants() {
   const [plants, setPlants] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [plantsPerPage] = useState(8);
+  const [totalPages, setTotalPages] = useState(1);
+  const perPage = 12; 
 
   useEffect(() => {
-    async function fetchPlants() {
+    async function fetchPlants(page) {
       try {
         const apiKey = import.meta.env.VITE_API_KEY;
         const response = await axios.get(
-          `https://perenual.com/api/species-list?key=${apiKey}&indoor=1&order=asc`
+          `https://perenual.com/api/species-list?key=${apiKey}&indoor=1&order=asc&page=${page}&per_page=${perPage}`
         );
-        setPlants(response.data.data);
+
+        if (response.data && response.data.total) {
+          setPlants((prevPlants) => [...prevPlants, ...response.data.data]);
+          setTotalPages(Math.ceil(response.data.total / perPage));
+        } else {
+          console.error("Invalid API response", response.data);
+        }
       } catch (error) {
         console.error("Error fetching plant", error);
       }
     }
 
-    fetchPlants();
-  }, []);
+    fetchPlants(currentPage);
+  }, [currentPage, perPage]);
 
   const indexOfLastPlant = currentPage * plantsPerPage;
   const indexOfFirstPlant = indexOfLastPlant - plantsPerPage;
@@ -40,53 +47,49 @@ function IndoorPlants() {
     currentPlants.find((plant) => plant.common_name === commonName)
   );
 
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  const visiblePlants = uniquePlants
+    .filter((plant, index) => index < currentPage * perPage)
+    .filter(
+      (plant) => plant.default_image && plant.default_image.regular_url
+    );
 
-  console.log("Total plants:", plants.length);
+  const loadMore = () => {
+    setCurrentPage((prevPage) => prevPage + 1);
+  };
+
   return (
     <>
       <h1>Indoor Plant Library</h1>
       <section className="container">
-        {currentPlants &&
-          currentPlants
-            .filter(
-              (plant) => plant.default_image && plant.default_image.regular_url
-            )
-            .map((plant) => (
-              <Link
-                to={`/details/${plant.id}`}
-                key={plant.id}
-                className="plant-link"
-              >
-                <div className="card">
-                  <div className="plant-image">
-                    <img
-                      src={plant.default_image.regular_url}
-                      alt={plant.common_name}
-                    />
-                  </div>
-                  <div className="content-container">
-                    <span className="plant-title">
-                      {formatCommonName(plant.common_name)}
-                    </span>
-                  </div>
-                </div>
-              </Link>
-            ))}
+        {visiblePlants.map((plant) => (
+          <Link
+            to={`/details/${plant.id}`}
+            key={plant.id}
+            className="plant-link"
+          >
+            <div className="card">
+              <div className="plant-image">
+                <img
+                  src={plant.default_image.regular_url}
+                  alt={plant.common_name}
+                />
+              </div>
+              <div className="content-container">
+                <span className="plant-title">
+                  {formatCommonName(plant.common_name)}
+                </span>
+              </div>
+            </div>
+          </Link>
+        ))}
       </section>
-      <div className="pagination">
-        {Array.from({ length: Math.ceil(plants.length / plantsPerPage) }).map(
-          (_, index) => (
-            <button
-              key={index}
-              onClick={() => paginate(index + 1)}
-              className={currentPage === index + 1 ? "active" : ""}
-            >
-              {index + 1}
-            </button>
-          )
-        )}
-      </div>
+      {currentPage < totalPages && (
+        <div className="show-more-container">
+          <button onClick={loadMore} className="show-more-button">
+            Show More
+          </button>
+        </div>
+      )}
     </>
   );
 }
