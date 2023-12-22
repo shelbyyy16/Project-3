@@ -19,6 +19,8 @@ Petals & Pots is a gardening app that brings the joy of cultivating plants right
 
 Whether you're a plant enthusiast or just starting your gardening journey, Petals & Pots empowers you to cultivate a thriving green space. Download the app now and embark on a botanical adventure! 🌿🌼
 
+![Petals & Pots Landing Page](./public/images/PetalsandPots.png)
+
 Vist [Petals & Pots](https://petalsandpots.netlify.app) 
 
 
