@@ -1,0 +1,30 @@
+
+.faq-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+  }
+  
+  .faq-item {
+    margin-bottom: 20px;
+  }
+  
+  .faq-answers {
+    margin-bottom: 100px;
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+  
+  .faq-item h3 {
+    text-align: left;
+    margin-top: 30px;
+  }
+  
+  .faq-item h3:hover {
+    cursor: pointer;
+  }
+  
+  .faq-item p {
+    text-align: left;
+  }

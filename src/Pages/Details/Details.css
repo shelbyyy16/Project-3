@@ -1,0 +1,69 @@
+
+.details-container {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 65%;
+    font-family: "Lora", serif;
+  }
+  
+  .details-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-color: #849b6d;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .details-plant-image {
+    width: 50%;
+    height: auto;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+  }
+  
+  .details-plant-image img {
+    max-width: 100%;
+    height: 100%;
+  } 
+  
+  .details-content-container {
+    width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+    color: #27360e;
+    margin-right: 30px;
+  }
+  
+  .plant-title {
+    font-size: 2em;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-family: "Kalnia", serif;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+  }
+  
+  ul li {
+    margin-bottom: 10px;
+  }
+  
+  .details {
+    font-weight: 600;
+  }
+  .details-description {
+    font-size: large;
+  }
+  
+  .scientific-name {
+    font-style: italic;
+  }
+  

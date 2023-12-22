@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./PlantLibraries.css"
 import { Link } from "react-router-dom";
 import axios from "axios";
 
@@ -9,7 +10,7 @@ function formatCommonName(commonName) {
     .join(" ");
 }
 
-function IndoorPlants() {
+function OutdoorPlants() {
   const [plants, setPlants] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
@@ -20,7 +21,7 @@ function IndoorPlants() {
       try {
         const apiKey = import.meta.env.VITE_API_KEY;
         const response = await axios.get(
-          `https://perenual.com/api/species-list?key=${apiKey}&indoor=1&order=asc&page=${page}&per_page=${perPage}`
+          `https://perenual.com/api/species-list?key=${apiKey}&indoor=0&order=asc&page=${page}&per_page=${perPage}`
         );
 
         if (response.data && response.data.total) {
@@ -55,7 +56,7 @@ function IndoorPlants() {
 
   return (
     <>
-      <h1>Indoor Plant Library</h1>
+      <h1>Outdoor Plant Library</h1>
       <section className="container">
         {visiblePlants.map((plant) => (
           <Link
@@ -90,4 +91,4 @@ function IndoorPlants() {
   );
 }
 
-export default IndoorPlants;
+export default OutdoorPlants;

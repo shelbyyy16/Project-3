@@ -1,4 +1,5 @@
 import React from "react";
+import "./Profile.css"
 import { useAuth0 } from "@auth0/auth0-react";
 import { Navigate } from "react-router";
 

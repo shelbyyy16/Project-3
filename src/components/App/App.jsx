@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import "../../index.css";
-import Header from "../Header";
-import Footer from "../Footer";
-import Home from "../../Pages/Home";
-import IndoorPlants from "../../Pages/IndoorPlants";
-import OutdoorPlants from "../../Pages/OutdoorPlants";
-import PlantDetails from "../../Pages/PlantDetails";
-import Profile from "../../Pages/Profile";
-import Search from "../../Pages/Search";
-import FAQ from "../../Pages/FAQ";
+import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
+import Home from "../../Pages/Home/Home";
+import IndoorPlants from "../../Pages/PlantLibraries/IndoorPlants";
+import OutdoorPlants from "../../Pages/PlantLibraries/OutdoorPlants";
+import PlantDetails from "../../Pages/Details/PlantDetails";
+import Profile from "../../Pages/Profile/Profile";
+import Search from "../../Pages/Search/Search";
+import FAQ from "../../Pages/FAQ/FAQ";
 
 function App() {
   const [searchQuery, setSearchQuery] = useState("");

@@ -1,8 +1,9 @@
 import React from "react";
+import "./Header.css"
 import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
-import LoginButton from "./Auth/LoginButton";
-import LogoutButton from "./Auth/LogoutButton";
+import LoginButton from "../Auth/LoginButton";
+import LogoutButton from "../Auth/LogoutButton";
 
 function Header({ setSearchQuery }) {
   const { user, isAuthenticated, isLoading } = useAuth0();
