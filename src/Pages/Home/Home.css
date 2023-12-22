@@ -29,6 +29,9 @@
     margin: 10px;
     font-size: medium;
     padding: 10px;
+    font-family: "Lora", serif;
+    font-weight: 500;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   }
   
   .browse-button:hover {

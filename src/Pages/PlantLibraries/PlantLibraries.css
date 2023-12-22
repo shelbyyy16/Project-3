@@ -59,14 +59,18 @@
    
     button {
       font-size: larger;
-      background-color: #27360e;
-      color: #dee7d9;
+      background-color: #dee7d9;
+      color: #27360e;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      margin-top: 10px;
       padding: 10px;
+      font-family: "Lora", serif;
+      font-weight: 500;
     }
   
     button:hover{
-      background-color:#849b6d;
-      color: #27360e;
+      background-color:#27360e;
+      color: #dee7d9;
     }
   }
   

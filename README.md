@@ -14,11 +14,13 @@ Petals & Pots is a gardening app that brings the joy of cultivating plants right
 
 - Engaging Home Page: The Home page welcomes users with stunning visuals, enticing them to explore indoor plants for beginners and offering a quick jump to the Indoor and Outdoor Plant Libraries.
 
+
 ### Get Growing Today!
 
 Whether you're a plant enthusiast or just starting your gardening journey, Petals & Pots empowers you to cultivate a thriving green space. Download the app now and embark on a botanical adventure! 🌿🌼
 
 Vist [Petals & Pots](https://petalsandpots.netlify.app) 
+
 
 ## Technologies Used:
 - React
@@ -36,12 +38,9 @@ Check out my [Trello Board](https://trello.com/b/SdwL81cx/plant-app)
 - Stock images are from Canva
 
 
-
-
-
-
 ## Next Steps: 
 - Make the App mobile friendly
-- Add a favoriting capability for signed in users to store their favorite plants
+- Add a "favoriting" capability for signed in users to store their favorite plants
 - Make a more robust search feature
 - Create the capability to share plants you like with others
+- Plant Care Guides 

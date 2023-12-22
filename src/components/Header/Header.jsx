@@ -40,7 +40,6 @@ function Header({ setSearchQuery }) {
           </Link>
         </nav>
         <nav className="second-nav">
-          {/* Add links or components for the second navigation bar */}
           <Link to="/indoorplants">Indoor Plant Library</Link>
           <Link to="/outdoorplants">Outdoor Plant Library</Link>
           <Link to="/FAQ">Plant FAQ</Link>
