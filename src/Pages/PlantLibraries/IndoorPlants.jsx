@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,} from "react";
 import "./PlantLibraries.css"
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -69,6 +69,7 @@ function IndoorPlants() {
                 <img
                   src={plant.default_image.regular_url}
                   alt={plant.common_name}
+                  
                 />
               </div>
               <div className="content-container">

@@ -7,7 +7,10 @@ function Home() {
     <>
       <div className="home-page-container">
         <div className="home-page-image">
-          <img src="/images/LandingPage.png" alt="Home Image" />
+          <img 
+          src="/images/LandingPage.png" 
+          alt="Home Image" 
+          loading="lazy"/>
         </div>
         <div className="content-container">
           <h1>Gardening: where every day is Earth Day.</h1>

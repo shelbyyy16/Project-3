@@ -49,7 +49,10 @@ function FAQ() {
   return (
     <div className="profile-container">
       <div className="stock-image">
-        <img src="/images/FAQpage.png" alt="" />
+        <img 
+        src="/images/FAQpage.png" 
+        alt=""
+        loading="lazy" />
       </div>
       <div className="profile-card">
         <h1>Plant FAQ's</h1>

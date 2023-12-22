@@ -22,7 +22,10 @@ const Profile = () => {
             <h1>Welcome to your garden, {user.name}</h1>
           </div>
           <div className="stock-image">
-            <img src="/images/PottedPlantsVintage.png" alt="" />
+            <img 
+            src="/images/PottedPlantsVintage.png" 
+            alt=""
+            loading="lazy" />
           </div>
         </div>
         <div className="favorites-container">
