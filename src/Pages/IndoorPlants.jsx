@@ -37,14 +37,10 @@ function IndoorPlants() {
     fetchPlants(currentPage);
   }, [currentPage, perPage]);
 
-  const indexOfLastPlant = currentPage * plantsPerPage;
-  const indexOfFirstPlant = indexOfLastPlant - plantsPerPage;
-  const currentPlants = plants.slice(indexOfFirstPlant, indexOfLastPlant);
-
   const uniquePlants = Array.from(
-    new Set(currentPlants.map((plant) => plant.common_name))
+    new Set(plants.map((plant) => plant.common_name))
   ).map((commonName) =>
-    currentPlants.find((plant) => plant.common_name === commonName)
+    plants.find((plant) => plant.common_name === commonName)
   );
 
   const visiblePlants = uniquePlants
@@ -94,5 +90,4 @@ function IndoorPlants() {
   );
 }
 
-export default IndoorPlants
-
+export default IndoorPlants;
